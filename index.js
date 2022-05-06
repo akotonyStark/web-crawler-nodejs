@@ -3,9 +3,17 @@ import fetch from 'node-fetch'
 import fs from 'fs'
 
 let results = []
-let ROOTURL = 'http://127.0.0.1:5500/'
+let ROOTURL = 'https://flaviocopes.com/'
+const traversedPaths = {}
+let depth = 0
+
 //web crawling function
 const webCrawl = async (url) => {
+  if (traversedPaths[url]) {
+    return
+  }
+
+  traversedPaths[url] = true
   const response = await fetch(url)
   const html = await response.text()
   const $ = cheerio.load(html)
@@ -21,13 +29,15 @@ const webCrawl = async (url) => {
   links.forEach((link, index) => {
     console.log('crawling:', link)
     webCrawl(convertToURL(link))
-    const obj = {
-      imageUrl: imageURLS,
-      sourceUrl: `${ROOTURL}${link}`,
-      depth: index,
-    }
-    results.push(obj)
   })
+
+  depth++
+  const obj = {
+    imageUrl: imageURLS,
+    sourceUrl: url,
+    depth: depth,
+  }
+  results.push(obj)
 
   //write results to json file
   fs.writeFileSync('results.json', JSON.stringify(results), (err) => {
