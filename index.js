@@ -11,7 +11,15 @@ const webCrawl = async (url) => {
     .map((i, link) => link.attribs.href)
     .get()
 
-  console.log('Links:', links)
+  links.forEach((link) => {
+    // console.log('crawling:', link)
+
+    const imageURLS = $('img')
+      .map((i, link) => link.attribs.src)
+      .get()
+
+    console.log({ imageUrl: imageURLS, sourceUrl: link })
+  })
 }
 
 webCrawl('https://www.geeksforgeeks.org/')
