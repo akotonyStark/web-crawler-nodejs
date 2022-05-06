@@ -36,13 +36,16 @@ const webCrawl = async (url) => {
       webCrawl(convertToURL(link))
     })
 
-  depth++
   const obj = {
     imageUrl: imageURLS,
     sourceUrl: url,
     depth: depth,
   }
-  results.push(obj)
+
+  if (depth <= 3) {
+    results.push(obj)
+  }
+  depth++
 
   //write results to json file
   fs.writeFileSync('results.json', JSON.stringify(results), (err) => {

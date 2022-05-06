@@ -9,17 +9,17 @@
       "img/ghostery_mini.png"
     ],
     "sourceUrl": "https://eloquentjavascript.net/",
-    "depth": 1
+    "depth": 0
   },
   {
     "imageUrl": [],
     "sourceUrl": "https://eloquentjavascript.net/code/LICENSE",
-    "depth": 2
+    "depth": 1
   },
   {
     "imageUrl": ["img/ejs.png"],
     "sourceUrl": "https://eloquentjavascript.net/1st_edition",
-    "depth": 3
+    "depth": 2
   },
   {
     "imageUrl": [
@@ -29,58 +29,6 @@
       "img/ghostery_mini.png"
     ],
     "sourceUrl": "https://eloquentjavascript.net/2nd_edition",
-    "depth": 4
-  },
-  {
-    "imageUrl": ["img/ejs.png"],
-    "sourceUrl": "http://eloquentjavascript.net/1st_edition",
-    "depth": 5
-  },
-  {
-    "imageUrl": ["img/ejs.png"],
-    "sourceUrl": "http://fr.eloquentjavascript.net",
-    "depth": 6
-  },
-  {
-    "imageUrl": [
-      "img/cover.jpg",
-      "img/nextjournal.png",
-      "img/holberton.png",
-      "img/mozilla_mini.png",
-      "img/hack_reactor_mini.png",
-      "img/ghostery_mini.png"
-    ],
-    "sourceUrl": "http://eloquentjavascript.net",
-    "depth": 7
-  },
-  {
-    "imageUrl": [],
-    "sourceUrl": "https://eloquentjavascript.net/Eloquent_JavaScript.epub",
-    "depth": 8
-  },
-  {
-    "imageUrl": [],
-    "sourceUrl": "https://eloquentjavascript.net/Eloquent_JavaScript.mobi",
-    "depth": 9
-  },
-  {
-    "imageUrl": [],
-    "sourceUrl": "http://eloquentjavascript.net/2nd_edition/Eloquent_JavaScript.epub",
-    "depth": 10
-  },
-  {
-    "imageUrl": [],
-    "sourceUrl": "http://eloquentjavascript.net/2nd_edition/Eloquent_JavaScript.mobi",
-    "depth": 11
-  },
-  {
-    "imageUrl": [],
-    "sourceUrl": "http://eloquentjavascript.net/2nd_edition/Eloquent_JavaScript_small.pdf",
-    "depth": 12
-  },
-  {
-    "imageUrl": [],
-    "sourceUrl": "http://eloquentjavascript.net/2nd_edition/Eloquent_JavaScript.pdf",
-    "depth": 13
+    "depth": 3
   }
 ]
