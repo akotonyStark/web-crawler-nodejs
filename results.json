@@ -1,81 +1,86 @@
 [
   {
-    "imageUrl": ["/img/og.png"],
-    "sourceUrl": "https://flaviocopes.com/",
+    "imageUrl": [
+      "img/cover.jpg",
+      "img/nextjournal.png",
+      "img/holberton.png",
+      "img/mozilla_mini.png",
+      "img/hack_reactor_mini.png",
+      "img/ghostery_mini.png"
+    ],
+    "sourceUrl": "https://eloquentjavascript.net/",
     "depth": 1
   },
   {
     "imageUrl": [],
-    "sourceUrl": "https://flaviocopes.com/tags/lab/",
+    "sourceUrl": "https://eloquentjavascript.net/code/LICENSE",
     "depth": 2
   },
   {
-    "imageUrl": [],
-    "sourceUrl": "https://flaviocopes.com/index.xml",
+    "imageUrl": ["img/ejs.png"],
+    "sourceUrl": "https://eloquentjavascript.net/1st_edition",
     "depth": 3
   },
   {
-    "imageUrl": ["/img/og.png"],
-    "sourceUrl": "https://flaviocopes.com/page/2/",
+    "imageUrl": [
+      "img/cover.png",
+      "img/mozilla_mini.png",
+      "img/hack_reactor_mini.png",
+      "img/ghostery_mini.png"
+    ],
+    "sourceUrl": "https://eloquentjavascript.net/2nd_edition",
     "depth": 4
   },
   {
-    "imageUrl": [],
-    "sourceUrl": "https://flaviocopes.com/tags/js/",
+    "imageUrl": ["img/ejs.png"],
+    "sourceUrl": "http://eloquentjavascript.net/1st_edition",
     "depth": 5
   },
   {
-    "imageUrl": ["/img/og.png"],
-    "sourceUrl": "https://flaviocopes.com/fix-cannot-use-import-outside-module/",
+    "imageUrl": ["img/ejs.png"],
+    "sourceUrl": "http://fr.eloquentjavascript.net",
     "depth": 6
   },
   {
-    "imageUrl": [],
-    "sourceUrl": "https://flaviocopes.com/tags/phaser/",
+    "imageUrl": [
+      "img/cover.jpg",
+      "img/nextjournal.png",
+      "img/holberton.png",
+      "img/mozilla_mini.png",
+      "img/hack_reactor_mini.png",
+      "img/ghostery_mini.png"
+    ],
+    "sourceUrl": "http://eloquentjavascript.net",
     "depth": 7
   },
   {
-    "imageUrl": ["/img/og.png"],
-    "sourceUrl": "https://flaviocopes.com/node-empty-folder/",
+    "imageUrl": [],
+    "sourceUrl": "https://eloquentjavascript.net/Eloquent_JavaScript.epub",
     "depth": 8
   },
   {
     "imageUrl": [],
-    "sourceUrl": "https://flaviocopes.com/tags/computers/",
+    "sourceUrl": "https://eloquentjavascript.net/Eloquent_JavaScript.mobi",
     "depth": 9
   },
   {
-    "imageUrl": ["/img/og.png"],
-    "sourceUrl": "https://flaviocopes.com/netlify-cloud-cron-jobs/",
+    "imageUrl": [],
+    "sourceUrl": "http://eloquentjavascript.net/2nd_edition/Eloquent_JavaScript.epub",
     "depth": 10
   },
   {
-    "imageUrl": ["/img/book-next.png"],
-    "sourceUrl": "https://flaviocopes.com/page/nextjs-handbook/",
+    "imageUrl": [],
+    "sourceUrl": "http://eloquentjavascript.net/2nd_edition/Eloquent_JavaScript.mobi",
     "depth": 11
   },
   {
-    "imageUrl": ["/img/og.png"],
-    "sourceUrl": "https://flaviocopes.com/how-to-format-astro-vscode/",
+    "imageUrl": [],
+    "sourceUrl": "http://eloquentjavascript.net/2nd_edition/Eloquent_JavaScript_small.pdf",
     "depth": 12
   },
   {
     "imageUrl": [],
-    "sourceUrl": "https://flaviocopes.com/tags/electronics/",
+    "sourceUrl": "http://eloquentjavascript.net/2nd_edition/Eloquent_JavaScript.pdf",
     "depth": 13
-  },
-  {
-    "imageUrl": ["Screen Shot 2022-04-14 at 10.15.56.png", "/img/og.png"],
-    "sourceUrl": "https://flaviocopes.com/javascript-decimal-arithmetics/",
-    "depth": 14
-  },
-  {
-    "imageUrl": [
-      "Screen Shot 2022-04-18 at 17.29.33.png",
-      "Screen Shot 2022-04-18 at 17.29.37.png",
-      "/img/og.png"
-    ],
-    "sourceUrl": "https://flaviocopes.com/css-how-to-stick-bottom-flexbox/",
-    "depth": 15
   }
 ]

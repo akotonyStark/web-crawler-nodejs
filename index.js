@@ -1,15 +1,17 @@
 import * as cheerio from 'cheerio'
 import fetch from 'node-fetch'
 import fs from 'fs'
+import * as urlmodule from 'valid-url'
+import * as urlParser from 'url'
 
 let results = []
-let ROOTURL = 'https://flaviocopes.com/'
+let ROOTURL = 'https://eloquentjavascript.net/'
 const traversedPaths = {}
 let depth = 0
 
 //web crawling function
 const webCrawl = async (url) => {
-  if (traversedPaths[url]) {
+  if (traversedPaths[url] || urlmodule.isWebUri(url) == undefined) {
     return
   }
 
@@ -26,10 +28,13 @@ const webCrawl = async (url) => {
     .map((i, imgLink) => imgLink.attribs.src)
     .get()
 
-  links.forEach((link, index) => {
-    console.log('crawling:', link)
-    webCrawl(convertToURL(link))
-  })
+  const { host } = urlParser.parse(url)
+  links
+    .filter((link) => link.includes(host))
+    .forEach((link, index) => {
+      console.log('crawling:', link)
+      webCrawl(convertToURL(link))
+    })
 
   depth++
   const obj = {
