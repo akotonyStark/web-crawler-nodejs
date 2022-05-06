@@ -17,11 +17,6 @@
     "depth": 1
   },
   {
-    "imageUrl": ["img/ejs.png"],
-    "sourceUrl": "https://eloquentjavascript.net/1st_edition",
-    "depth": 2
-  },
-  {
     "imageUrl": [
       "img/cover.png",
       "img/mozilla_mini.png",
@@ -29,6 +24,11 @@
       "img/ghostery_mini.png"
     ],
     "sourceUrl": "https://eloquentjavascript.net/2nd_edition",
+    "depth": 2
+  },
+  {
+    "imageUrl": ["img/ejs.png"],
+    "sourceUrl": "https://eloquentjavascript.net/1st_edition",
     "depth": 3
   }
 ]

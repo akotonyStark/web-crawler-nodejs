@@ -5,9 +5,11 @@ import * as urlmodule from 'valid-url'
 import * as urlParser from 'url'
 
 let results = []
-let ROOTURL = 'https://eloquentjavascript.net/'
-const traversedPaths = {}
-let depth = 0
+let traversedPaths = {}
+let count = 0
+let args = process.argv[2] || 'https://eloquentjavascript.net/' //get url from arguments or pass sample url
+let depth = process.argv[3] || 3 //getting depth from arguments or passing default 3
+let ROOTURL = args
 
 //web crawling function
 const webCrawl = async (url) => {
@@ -39,13 +41,13 @@ const webCrawl = async (url) => {
   const obj = {
     imageUrl: imageURLS,
     sourceUrl: url,
-    depth: depth,
+    depth: count,
   }
 
-  if (depth <= 3) {
+  if (count <= depth) {
     results.push(obj)
   }
-  depth++
+  count++
 
   //write results to json file
   fs.writeFileSync('results.json', JSON.stringify(results), (err) => {
