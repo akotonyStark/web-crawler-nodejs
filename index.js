@@ -10,6 +10,7 @@ let count = 0
 let args = process.argv[2] || 'https://eloquentjavascript.net/' //get url from arguments or pass sample url
 let depth = process.argv[3] || 3 //getting depth from arguments or passing default 3
 let ROOTURL = args
+let links = []
 
 //web crawling function
 const webCrawl = async (url) => {
@@ -18,61 +19,73 @@ const webCrawl = async (url) => {
   }
 
   traversedPaths[url] = true
-  const response = await fetch(url)
-  const html = await response.text()
-  const $ = cheerio.load(html)
+  try {
+    const response = await fetch(url)
+    const html = await response.text()
 
-  const links = $('a')
-    .map((i, link) => link.attribs.href)
-    .get()
+    if (response.status !== 200) {
+      //throw new Error('Error fetching data from URL')
+      console.log('Error fetching data from URL')
+    }
+    const $ = cheerio.load(html)
+    links = $('a')
+      .map((i, link) => link.attribs.href)
+      .get()
 
-  const imageURLS = $('img')
-    .map((i, imgLink) => imgLink.attribs.src)
-    .get()
+    const imageURLS = $('img')
+      .map((i, imgLink) => imgLink.attribs.src)
+      .get()
 
-  const { host } = urlParser.parse(url)
-  links
-    .filter((link) => link.includes(host))
-    .forEach((link, index) => {
-      console.log('crawling:', link)
-      webCrawl(convertToURL(link))
-    })
+    const { host } = urlParser.parse(url)
+    links
+      .filter((link) => link.includes(host))
+      .forEach((link) => {
+        console.log('crawling:', link)
+        webCrawl(convertToURL(link))
+      })
 
-  const obj = {
-    imageUrl: imageURLS,
-    sourceUrl: url,
-    depth: count,
+    const obj = {
+      imageUrl: imageURLS,
+      sourceUrl: url,
+      depth: count,
+    }
+
+    if (count <= depth) {
+      results.push(obj)
+    }
+    count++
+  } catch (err) {
+    console.log(`Error on ${url}:`, err.code)
+    if (links.length > 0) {
+      webCrawl(convertToURL(links[links.length - 1]))
+    }
   }
-
-  if (count <= depth) {
-    results.push(obj)
-  }
-  count++
 
   //write results to json file
-  fs.writeFileSync('results.json', JSON.stringify(results), (err) => {
-    if (err) {
-      console.log('File Write Error:', err)
-      return
-    }
-  })
+  createJsonOBJ(results)
 }
 
 //converting to valid URL
 const convertToURL = (link) => {
   if (link.includes('http')) {
     return link
-  } else if (
-    link.startsWith('/') ||
-    link.startsWith('~') ||
-    link.startsWith('#')
-  ) {
-    return `${ROOTURL}${link.substring(1)}`
-  } else if (link.startsWith('.')) {
-    return `${ROOTURL}${link.substring(2)}`
-  } else {
-    return `${ROOTURL}${link}`
   }
+  if (link.startsWith('/') || link.startsWith('~') || link.startsWith('#')) {
+    return `${ROOTURL}${link.substring(1)}`
+  }
+  if (link.startsWith('.')) {
+    return `${ROOTURL}${link.substring(2)}`
+  }
+  return `${ROOTURL}${link}`
+}
+
+const createJsonOBJ = (data) => {
+  fs.writeFileSync('results.json', JSON.stringify(data), (err) => {
+    if (err) {
+      console.log('File Write Error:', err)
+      return
+    }
+  })
 }
 
 webCrawl(ROOTURL)
