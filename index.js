@@ -56,9 +56,6 @@ const webCrawl = async (url) => {
     count++
   } catch (err) {
     console.log(`Error on ${url}:`, err.code)
-    if (links.length > 0) {
-      webCrawl(convertToURL(links[links.length - 1]))
-    }
   }
 
   //write results to json file
